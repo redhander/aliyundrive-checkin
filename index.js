@@ -6,7 +6,9 @@ const updateAccesssTokenURL = "https://auth.aliyundrive.com/v2/account/token";
 const signinURL = "https://member.aliyundrive.com/v1/activity/sign_in_list";
 const rewardURL =
   "https://member.aliyundrive.com/v1/activity/sign_in_reward?_rx-s=mobile";
-const refreshToeknArry = ["c28d1c05e4b5431299eac588ad090145"];
+const refreshToeknArry = process.env.REFRESH_TOKENS.split(",").map((i) =>
+  i.trim()
+);
 
 !(async () => {
   for (const elem of refreshToeknArry) {
